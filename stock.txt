@@ -10,3 +10,8 @@ citranightly
 net.kuribo64.melonDS
 Overwatch.exe
 Starfield.exe
+pcsx2-qt
+rpcs3
+minecraft-launcher
+multimc
+mcpelauncher-ui
