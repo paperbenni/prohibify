@@ -61,7 +61,7 @@ function send_notification {
 while true; do
   while IFS= read -r line; do
     # Skip empty or invalid lines
-    if [[ -z "$line" || ! $line =~ ^[a-zA-Z0-9_:.]+$ ]]; then
+    if [[ -z "$line" || ! $line =~ ^[a-zA-Z0-9_:.-]+$ ]]; then
       continue
     fi
     echo "checking $line"
