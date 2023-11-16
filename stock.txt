@@ -7,7 +7,7 @@ yuzu
 retroarch
 citra-qt
 citranightly
-net.kuribo64.melonDS
+melonDS
 Overwatch.exe
 Starfield.exe
 pcsx2-qt

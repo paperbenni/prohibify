@@ -9,7 +9,7 @@ all:
 install: prohibify.sh stock.txt
 	$(info INFO: install PREFIX: $(PREFIX))
 	install -Dm 755 prohibify.sh $(DESTDIR)$(PREFIX)/bin/prohibify
-	install -Dm 755 stock.txt $(DESTDIR)$(PREFIX)/share/prohibify/stock.txt
+	install -Dm 644 stock.txt $(DESTDIR)$(PREFIX)/share/prohibify/stock.txt
 
 .PHONY: uninstall
 uninstall:

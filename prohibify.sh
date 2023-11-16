@@ -45,7 +45,13 @@ echo "stopping distractions"
 stock_blocklist="/usr/share/prohibify/stock.txt"
 user_blocklist="$HOME/.config/prohibify/blocklist.txt"
 
-blocklist=$(cat $stock_blocklist "$user_blocklist")
+if [[ -f "$user_blocklist" ]]; then
+  blocklist=$(cat $stock_blocklist "$user_blocklist")
+else
+  blocklist=$(cat $stock_blocklist)
+fi
+
+echo "blocklist $blocklist"
 
 function send_notification {
   notify-send "Prohibify" "Killed $1 to stop distractions"
@@ -54,6 +60,11 @@ function send_notification {
 
 while true; do
   while IFS= read -r line; do
+    # Skip empty or invalid lines
+    if [[ -z "$line" || ! $line =~ ^[a-zA-Z0-9_:.]+$ ]]; then
+      continue
+    fi
+    echo "checking $line"
     if [[ $line == *":"* ]]; then
       program=$(echo "$line" | cut -d':' -f1)
       match_type=$(echo "$line" | cut -d':' -f2)
@@ -70,8 +81,9 @@ while true; do
         send_notification "$program"
       fi
     fi
+    sleep 1
   done <<< "$blocklist"
-  sleep 60
+  sleep 1
 done
 
 
