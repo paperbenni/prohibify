@@ -5,8 +5,8 @@ dolphin-emu
 Ryujinx
 yuzu
 retroarch
-citra-qt
-citranightly
+citra-qt:force
+citranightly:force
 melonDS
 Overwatch.exe
 Starfield.exe

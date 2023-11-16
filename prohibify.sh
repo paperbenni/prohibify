@@ -61,7 +61,7 @@ function send_notification {
 
 function kill_program {
     local program=$1
-    local match_type=$2
+    local match_type=${2:-full}
     local force_kill=$3
     local kill_command=""
 
