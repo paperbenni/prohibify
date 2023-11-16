@@ -1,0 +1,12 @@
+lutris
+steam-runtime
+steam-native
+dolphin-emu
+Ryujinx
+yuzu
+retroarch
+citra-qt
+citranightly
+net.kuribo64.melonDS
+Overwatch.exe
+Starfield.exe
